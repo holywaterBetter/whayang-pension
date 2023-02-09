@@ -8,13 +8,15 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { VideoComponent } from './video/video.component';
+import { HomeVideoComponent } from './home/home-video/home-video.component';
+import { HomeReviewComponent } from './home/home-review/home-review.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
     TopBarComponent,
-    VideoComponent
+    HomeVideoComponent,
+    HomeReviewComponent
    ],
   imports: [
     BrowserModule,
