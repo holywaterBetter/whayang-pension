@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,8 +11,9 @@ import { HomeVideoComponent } from './home/home-video/home-video.component';
 import { HomeReviewComponent } from './home/home-review/home-review.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [			
     AppComponent,
+    HomeComponent,
     TopBarComponent,
     HomeVideoComponent,
     HomeReviewComponent
@@ -25,6 +25,7 @@ import { HomeReviewComponent } from './home/home-review/home-review.component';
     MatIconModule,
     MatButtonModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
