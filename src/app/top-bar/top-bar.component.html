@@ -1,25 +1,10 @@
 <mat-toolbar [class.white]="white">
-  <div class="left">
-    <button mat-button>ABOUT</button>
-    <button mat-button>고객후기</button>
-    <button mat-button>RESERVE</button>
-  </div>
-
-  <mat-icon>home</mat-icon>
-  <div class="right">
-    <button mat-button>ROOMS</button>
-    <button mat-button>평상</button>
-    <div #hover1 (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()">
-      <button mat-button>식사</button>
-      <ul *ngIf="isOpen">
-        <li>테스트2</li>
-        <li>테스트2</li>
-        <li>테스트2</li>
-        <li>테스트2</li>
-        <li>테스트2</li>
-        <li>테스트2</li>
-        <li>테스트2</li>
-      </ul>
-    </div>
+  <div class="logo"></div>
+  <div class="menu">
+    <p>소개</p>
+    <p>예약</p>
+    <p>객실</p>
+    <p>식사</p>
+    <p>평상</p>
   </div>
 </mat-toolbar>
