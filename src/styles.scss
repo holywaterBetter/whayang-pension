@@ -13,3 +13,11 @@ body {
     font-weight: 300;
   }
 }
+
+$TopBarHeight: 64px;
+$screenSidePadding: 3rem;
+
+@mixin font-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
