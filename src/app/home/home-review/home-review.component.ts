@@ -15,25 +15,22 @@ export class HomeReviewComponent {
   constructor() {
     this._setDisabledButton();
   }
-  private _setDisabledButton() {
-    this.disabledLeftButton = this.moveTurn === 0;
-    if (screen.width <= 640) {
-      this.disabledRightButton = this.moveTurn === -4;
-    } else if (screen.width <= 1023) {
-      this.disabledRightButton = this.moveTurn === -3;
-    } else {
-      this.disabledRightButton = this.moveTurn === -2;
-    }
-  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.move(0);
   }
 
+  move(direction: number) {
+    this._moveTurn += direction;
+    this.reviews.nativeElement.style.transform = `translate3d( calc(( ${this.reviewBoxWidth} + 2rem) * ${this._moveTurn}), 0px, 0px)`;
+    this._setDisabledButton();
+  }
+  private _moveTurn: number = 0;
+
   get reviewBoxWidth(): string {
     if (document.documentElement.scrollWidth <= 640) {
-      return `calc(${this.reviews.nativeElement.clientWidth}px - 2rem`;
+      return `calc(${this.reviews.nativeElement.clientWidth}px - 2rem)`;
     } else if (document.documentElement.scrollWidth <= 1023) {
       return `calc((${this.reviews.nativeElement.clientWidth}px - 4rem) / 2)`;
     } else {
@@ -41,12 +38,16 @@ export class HomeReviewComponent {
     }
   }
 
-  move(direction: number) {
-    this.moveTurn += direction;
-    this.reviews.nativeElement.style.transform = `translate3d( calc(( ${this.reviewBoxWidth} + 2rem) * ${this.moveTurn}), 0px, 0px)`;
-    this._setDisabledButton();
+  private _setDisabledButton() {
+    this.disabledLeftButton = this._moveTurn === 0;
+    if (screen.width <= 640) {
+      this.disabledRightButton = this._moveTurn === -4;
+    } else if (screen.width <= 1023) {
+      this.disabledRightButton = this._moveTurn === -3;
+    } else {
+      this.disabledRightButton = this._moveTurn === -2;
+    }
   }
-  private moveTurn: number = 0;
 }
 
 const ReviewList = [
