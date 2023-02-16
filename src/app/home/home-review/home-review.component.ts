@@ -1,20 +1,13 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'home-review',
   templateUrl: './home-review.component.html',
   styleUrls: ['./home-review.component.scss'],
 })
-export class HomeReviewComponent implements OnInit {
+export class HomeReviewComponent {
   @ViewChild('reviews', { static: true }) reviews: ElementRef<HTMLElement>;
 
-  reviewBoxWidth: string;
   ReviewList = ReviewList;
   disabledLeftButton: boolean;
   disabledRightButton: boolean;
@@ -33,71 +26,25 @@ export class HomeReviewComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this._scrollBarWidth = screen.width - document.documentElement.clientWidth;
-    console.warn(
-      '_scrollBarWidth',
-      this._scrollBarWidth,
-      screen.width,
-      document.documentElement.offsetWidth,
-      document.documentElement.clientWidth,
-      document.documentElement.scrollWidth,
-      this.reviews.nativeElement.clientWidth
-    );
-    this._setReviewBoxWidth();
-  }
-  private _scrollBarWidth: number;
-
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    console.warn(
-      'resize',
-      this._scrollBarWidth,
-      screen.width,
-      document.documentElement.offsetWidth,
-      document.documentElement.clientWidth,
-      document.documentElement.scrollWidth,
-      this.reviews.nativeElement.clientWidth,
-      event.target.innerWidth,
-      event.target.clientWidth,
-      event.target.widdth
-    );
+    this.move(0);
   }
 
-  _setReviewBoxWidth() {
-    if (screen.width <= 640) {
-      this.reviewBoxWidth = `calc(${this.reviews.nativeElement.clientWidth}px - 2rem`;
-    } else if (screen.width <= 1023) {
-      this.reviewBoxWidth = `calc((${this.reviews.nativeElement.clientWidth}px - 4rem) / 2)`;
+  get reviewBoxWidth(): string {
+    if (document.documentElement.scrollWidth <= 640) {
+      return `calc(${this.reviews.nativeElement.clientWidth}px - 2rem`;
+    } else if (document.documentElement.scrollWidth <= 1023) {
+      return `calc((${this.reviews.nativeElement.clientWidth}px - 4rem) / 2)`;
     } else {
-      this.reviewBoxWidth = `calc((${this.reviews.nativeElement.clientWidth}px - 6rem) / 3)`;
+      return `calc((${this.reviews.nativeElement.clientWidth}px - 6rem) / 3)`;
     }
-    // if (screen.width <= 640) {
-    //   this.reviewBoxWidth = `calc(100vw - 8rem - ${this._scrollBarWidth}px)`;
-    // } else if (screen.width <= 1023) {
-    //   this.reviewBoxWidth = `calc((100vw - 10rem - ${this._scrollBarWidth}px) / 2)`;
-    // } else {
-    //   this.reviewBoxWidth = `calc((100vw - 12rem - ${this._scrollBarWidth}px) / 3)`;
-    // }
   }
 
-  move(direction: boolean) {
-    if (direction) {
-      this.moveTurn++;
-    } else {
-      this.moveTurn--;
-    }
-    console.warn(this.moveTurn);
+  move(direction: number) {
+    this.moveTurn += direction;
+    this.reviews.nativeElement.style.transform = `translate3d( calc(( ${this.reviewBoxWidth} + 2rem) * ${this.moveTurn}), 0px, 0px)`;
     this._setDisabledButton();
-    this._setReviewBoxWidth();
-
-    if (screen.width <= 640) {
-      this.reviews.nativeElement.style.transform = `translate3d( calc(( ${this.reviewBoxWidth} + 2rem) * ${this.moveTurn}), 0px, 0px)`;
-    } else if (screen.width <= 1023) {
-      this.reviews.nativeElement.style.transform = `translate3d( calc(( ${this.reviewBoxWidth} + 2rem) * ${this.moveTurn}), 0px, 0px)`;
-    } else {
-      this.reviews.nativeElement.style.transform = `translate3d( calc(( ${this.reviewBoxWidth} + 2rem) * ${this.moveTurn}), 0px, 0px)`;
-    }
   }
   private moveTurn: number = 0;
 }

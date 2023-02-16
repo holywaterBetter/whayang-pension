@@ -6,12 +6,12 @@
     <div
       class="move left"
       [class.disabled]="disabledLeftButton"
-      (click)="move(true)"
+      (click)="move(1)"
     ></div>
     <div
       class="move right"
       [class.disabled]="disabledRightButton"
-      (click)="move(false)"
+      (click)="move(-1)"
     ></div>
     <div class="content">
       <div class="reviews" #reviews>
@@ -22,7 +22,9 @@
           (mouseenter)="review.hover = true"
           (mouseleave)="review.hover = false"
         >
-          <a *ngIf="review.hover" href="review.href"> 자세히 살펴보기 </a>
+          <a *ngIf="review.hover" href="{{ review.href }}" target="_blank">
+            자세히 살펴보기
+          </a>
           <div
             class="img"
             [ngStyle]="{ 'background-image': 'url(' + review.img + ')' }"
