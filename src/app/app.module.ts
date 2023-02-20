@@ -9,24 +9,28 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeVideoComponent } from './home/home-video/home-video.component';
 import { HomeReviewComponent } from './home/home-review/home-review.component';
+import { HomeRecommendComponent } from './home/home-recommend/home-recommend.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
     HomeComponent,
     TopBarComponent,
     HomeVideoComponent,
-    HomeReviewComponent
-   ],
+    HomeReviewComponent,
+    HomeRecommendComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    YouTubePlayerModule,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

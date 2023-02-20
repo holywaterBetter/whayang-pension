@@ -92,8 +92,7 @@
 
             .description {
               margin-bottom: 2rem;
-              font-size: 20px;
-              font-weight: 500;
+              @include font-descrtipion;
             }
           }
         }
