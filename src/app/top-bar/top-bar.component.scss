@@ -34,3 +34,23 @@ div.menu {
     font-weight: 500;
   }
 }
+
+mat-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  mat-toolbar {
+    background-color: white;
+    color: black;
+    position: relative;
+    display: flex;
+  }
+
+  div.menu {
+    display: none;
+  }
+  mat-icon {
+    display: flex;
+  }
+}
