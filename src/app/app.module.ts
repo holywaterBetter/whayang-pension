@@ -11,6 +11,7 @@ import { HomeVideoComponent } from './home/home-video/home-video.component';
 import { HomeReviewComponent } from './home/home-review/home-review.component';
 import { HomeRecommendComponent } from './home/home-recommend/home-recommend.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     HomeVideoComponent,
     HomeReviewComponent,
     HomeRecommendComponent,
+    BottomBarComponent,
   ],
   imports: [
     BrowserModule,

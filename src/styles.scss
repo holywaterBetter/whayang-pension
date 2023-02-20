@@ -28,3 +28,9 @@ $screenSidePadding: 3rem;
   line-height: 20px;
   font-weight: 500;
 }
+
+@mixin font-small {
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 400;
+}
