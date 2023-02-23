@@ -1,0 +1,34 @@
+@import "/src/styles.scss";
+
+img {
+  width: 100vw;
+}
+
+.main-container {
+  .title {
+    width: 100vw;
+    top: 20vw;
+    text-align: center;
+    position: absolute;
+    p {
+      @include font-main-title;
+      color: white;
+    }
+  }
+}
+
+.valley-container {
+  padding: 0 $screenSidePadding;
+  width: 100%;
+  .valley-box {
+    img {
+      width: auto;
+      height: 60vh;
+      margin: 0.6rem;
+    }
+  }
+}
+
+img {
+  width: 100%;
+}

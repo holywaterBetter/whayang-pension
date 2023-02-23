@@ -17,6 +17,12 @@ body {
 $TopBarHeight: 64px;
 $screenSidePadding: 3rem;
 
+@mixin font-main-title {
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: 500;
+}
+
 @mixin font-title {
   font-size: 2rem;
   line-height: 2rem;

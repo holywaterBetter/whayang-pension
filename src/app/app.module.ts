@@ -12,9 +12,10 @@ import { HomeReviewComponent } from './home/home-review/home-review.component';
 import { HomeRecommendComponent } from './home/home-recommend/home-recommend.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     TopBarComponent,
@@ -22,7 +23,8 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
     HomeReviewComponent,
     HomeRecommendComponent,
     BottomBarComponent,
-  ],
+      AboutComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
