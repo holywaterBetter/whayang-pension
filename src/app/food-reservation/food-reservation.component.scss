@@ -1,0 +1,11 @@
+@import "/src/styles.scss";
+
+.title {
+  @include font-main-title;
+}
+
+.description {
+  p {
+    @include font-description;
+  }
+}

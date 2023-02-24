@@ -1,0 +1,121 @@
+<p class="title">능운대펜션 식사 예약입니다.</p>
+<div class="descrtipion">
+  <p>4인 기준, 테이블 당 식사 최소 1개 선택 해주셔야 합니다.</p>
+  <p>백숙, 버섯찌개 가능하며, 기타 음식은 현장에서 주문하시면 됩니다.</p>
+  <p>공원 내 입차를 희망하시면, 차량번호도 함께 적어주세요.</p>
+  <p>당일 10시 이후는 전화예약만 가능합니다.</p>
+</div>
+
+<mat-accordion>
+  <!-- 타입 선택 -->
+  <!-- 날짜 선택 -->
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+    expanded="{{ panelOpenState }}"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>event</mat-icon>
+        날짜 선택
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ selectedDate }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card>
+      <mat-calendar
+        [(selected)]="selected"
+        [dateFilter]="dateFilter"
+      ></mat-calendar>
+    </mat-card>
+  </mat-expansion-panel>
+
+  <!-- 시간 선택 -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>access_time</mat-icon>
+        시간 선택
+      </mat-panel-title>
+      <mat-panel-description> 20시30분 </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-option>One fish</mat-chip-option>
+      <mat-chip-option>Two fish</mat-chip-option>
+      <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+      <mat-chip-option color="warn">Warn fish</mat-chip-option>
+    </mat-chip-listbox>
+  </mat-expansion-panel>
+
+  <!-- 인원 선택 -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>people</mat-icon>
+        인원 선택
+      </mat-panel-title>
+      <mat-panel-description> 6명 </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </mat-expansion-panel>
+  <!-- 예약자 성함 -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>person</mat-icon>
+        예약자 성함
+      </mat-panel-title>
+      <mat-panel-description> 박종구 </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </mat-expansion-panel>
+  <!-- 메뉴 선택 -->
+  <!-- 연락처 기입 -->
+  <!-- 차량번호 기입 -->
+</mat-accordion>
+
+<mat-vertical-stepper [linear]="false" #stepper [animationDuration]="'1000'">
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>예약일을 선택하세요.</ng-template>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Last name, First name"
+          formControlName="firstCtrl"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Last name, First name"
+          formControlName="firstCtrl"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-vertical-stepper>
