@@ -13,6 +13,8 @@ import { HomeRecommendComponent } from './home/home-recommend/home-recommend.com
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { AboutComponent } from './about/about.component';
+import { FoodComponent } from './food/food.component';
+import { FoodReservationComponent } from './food-reservation/food-reservation.component';
 
 @NgModule({
   declarations: [	
@@ -23,7 +25,8 @@ import { AboutComponent } from './about/about.component';
     HomeReviewComponent,
     HomeRecommendComponent,
     BottomBarComponent,
-      AboutComponent
+    AboutComponent,
+    FoodComponent,
    ],
   imports: [
     BrowserModule,
