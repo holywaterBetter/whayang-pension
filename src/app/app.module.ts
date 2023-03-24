@@ -27,6 +27,7 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { AboutComponent } from './about/about.component';
 import { FoodComponent } from './food/food.component';
 import { FoodReservationComponent } from './food-reservation/food-reservation.component';
+import { FlatBenchComponent } from './flat-bench/flat-bench.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FoodReservationComponent } from './food-reservation/food-reservation.co
     AboutComponent,
     FoodComponent,
     FoodReservationComponent,
+    FlatBenchComponent,
   ],
   imports: [
     BrowserModule,
