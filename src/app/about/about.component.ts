@@ -25,6 +25,13 @@ export class AboutComponent {
     '/assets/valley4.jpg',
   ];
 
+  bbqIndex: number = 0;
+  bbqImages: string[] = [
+    '/assets/dining-place.jpg',
+    '/assets/fire.jpg',
+    '/assets/fire2.jpg',
+  ];
+
   updateTextPosition() {
     const img = this.myImg.nativeElement;
     const height =
@@ -32,10 +39,6 @@ export class AboutComponent {
         ? window.screen.availHeight
         : img.height;
     this.myText.nativeElement.style.top = `calc(${height / 2}px)`;
-  }
-
-  onSliderThumbClick(index: number) {
-    this.currentIndex = index;
   }
 
   @HostListener('window:resize')
