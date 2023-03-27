@@ -31,7 +31,6 @@ export class AboutComponent {
       window.screen.availHeight < img.height
         ? window.screen.availHeight
         : img.height;
-    console.log(window.screen.availHeight, height);
     this.myText.nativeElement.style.top = `calc(${height / 2}px)`;
   }
 

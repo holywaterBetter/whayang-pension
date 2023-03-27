@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-flat-bench',
+  selector: 'flat-bench',
   templateUrl: './flat-bench.component.html',
   styleUrls: ['./flat-bench.component.scss'],
 })
