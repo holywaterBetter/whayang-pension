@@ -7,15 +7,15 @@
   <div class="slider-board">
     <div
       class="slider-img"
-      [ngStyle]="{ 'background-image': 'url(' + BBQImages[BBQIndex] + ')' }"
+      [ngStyle]="{ 'background-image': 'url(' + images[currentIndex] + ')' }"
     ></div>
   </div>
   <div class="slider-bottom">
     <div
-      *ngFor="let image of BBQImages; let i = index"
+      *ngFor="let image of images; let i = index"
       class="slider-thumb"
-      [ngClass]="{ active: i == BBQIndex }"
-      (click)="BBQIndex = i"
+      [ngClass]="{ active: i == currentIndex }"
+      (click)="currentIndex = i"
     ></div>
   </div>
 </div>

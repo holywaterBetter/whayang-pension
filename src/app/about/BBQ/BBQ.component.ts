@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class BBQComponent {
   constructor() {}
 
-  BBQIndex: number = 0;
-  BBQImages: string[] = [
+  currentIndex: number = 0;
+  images: string[] = [
     '/assets/dining-place.jpg',
     '/assets/fire.jpg',
     '/assets/fire2.jpg',
