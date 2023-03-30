@@ -51,6 +51,7 @@ import { ValleyComponent } from './play/valley/valley.component';
     BBQComponent,
     MapComponent,
     PlayComponent,
+    ValleyComponent,
   ],
   imports: [
     BrowserModule,
