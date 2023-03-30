@@ -31,6 +31,8 @@ import { FlatBenchComponent } from './flat-bench/flat-bench.component';
 import { FacilitiesComponent } from './about/facilities/facilities.component';
 import { BBQComponent } from './about/BBQ/BBQ.component';
 import { MapComponent } from './about/map/map.component';
+import { PlayComponent } from './play/play.component';
+import { ValleyComponent } from './play/valley/valley.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { MapComponent } from './about/map/map.component';
     FacilitiesComponent,
     BBQComponent,
     MapComponent,
+    PlayComponent,
   ],
   imports: [
     BrowserModule,
