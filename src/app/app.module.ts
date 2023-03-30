@@ -28,6 +28,8 @@ import { AboutComponent } from './about/about.component';
 import { FoodComponent } from './food/food.component';
 import { FoodReservationComponent } from './food-reservation/food-reservation.component';
 import { FlatBenchComponent } from './flat-bench/flat-bench.component';
+import { BBQComponent } from './about/BBQ/BBQ.component';
+import { MapComponent } from './about/map/map.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { FlatBenchComponent } from './flat-bench/flat-bench.component';
     FoodComponent,
     FoodReservationComponent,
     FlatBenchComponent,
+    BBQComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
