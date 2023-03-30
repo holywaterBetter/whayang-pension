@@ -1,12 +1,13 @@
 <div class="slider-container">
   <div class="header">
+    <p>즐겨유</p>
     <p>펜션 시설</p>
   </div>
 
   <div class="slider-board">
     <div
       class="slider-img"
-      [ngStyle]="{ 'background-image': 'url(' + images[currentIndex] + ')' }"
+      [style.background-image]="'url(' + images[currentIndex] + ')'"
     ></div>
   </div>
   <div class="slider-bottom">

@@ -3,7 +3,7 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 @Component({
   selector: 'about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
+  styleUrls: ['../app.component.scss'],
 })
 export class AboutComponent {
   @ViewChild('TopImage') myImg: ElementRef<HTMLImageElement>;

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'facilities',
   templateUrl: './facilities.component.html',
-  styleUrls: ['../about.component.scss'],
+  styleUrls: ['../../app.component.scss'],
 })
 export class FacilitiesComponent {
   currentIndex: number = 0;

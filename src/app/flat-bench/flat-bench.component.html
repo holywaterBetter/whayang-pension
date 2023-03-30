@@ -1,4 +1,4 @@
-<div class="top">
+<div class="slider-container">
   <div class="header">
     <p>평상엔 눕고</p>
     <p>불판엔 굽고</p>
@@ -7,7 +7,7 @@
   <div class="slider-board">
     <div
       class="slider-img"
-      [ngStyle]="{ 'background-image': 'url(' + images[currentIndex] + ')' }"
+      [style.background-image]="'url(' + images[currentIndex] + ')'"
     ></div>
   </div>
   <div class="slider-bottom">
@@ -15,7 +15,7 @@
       *ngFor="let image of images; let i = index"
       class="slider-thumb"
       [ngClass]="{ active: i == currentIndex }"
-      (click)="onSliderThumbClick(i)"
+      (click)="currentIndex = i"
     ></div>
   </div>
 </div>

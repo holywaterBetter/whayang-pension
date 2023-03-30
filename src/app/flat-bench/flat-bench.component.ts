@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'flat-bench',
   templateUrl: './flat-bench.component.html',
-  styleUrls: ['./flat-bench.component.scss'],
+  styleUrls: ['../app.component.scss'],
 })
 export class FlatBenchComponent {
   currentIndex: number = 0;
@@ -13,8 +13,4 @@ export class FlatBenchComponent {
     '/assets/flat-bench3.jpg',
     '/assets/flat-bench4.jpg',
   ];
-
-  onSliderThumbClick(index: number) {
-    this.currentIndex = index;
-  }
 }

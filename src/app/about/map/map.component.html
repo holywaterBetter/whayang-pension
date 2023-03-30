@@ -1,11 +1,12 @@
 <div class="slider-container">
   <div class="header">
+    <p>빨리 와유</p>
     <p>오시는 길</p>
   </div>
   <div class="slider-board">
     <div
       class="slider-img"
-      [ngStyle]="{ 'background-image': 'url(/assets/map-introduce.jpg)' }"
+      [style.background-image]="'url(/assets/map-introduce.jpg)'"
     ></div>
   </div>
 </div>
@@ -16,7 +17,7 @@
     충청북도 괴산군 청천면 화양동길 247 <br />
     ​검색창에 "능운대펜션", "능운대휴게소"를 검색하세요
   </p>
-  <div class="map-img">
+  <div [style.margin]="'1rem'">
     <img src="/assets/map.jpg" art="map" />
   </div>
 
