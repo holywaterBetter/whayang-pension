@@ -27,12 +27,17 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { AboutComponent } from './about/about.component';
 import { FoodComponent } from './food/food.component';
 import { FoodReservationComponent } from './food-reservation/food-reservation.component';
+import { GoogleSheetService } from './google-sheet.service';
+import { HttpClientModule } from '@angular/common/http';
 import { FlatBenchComponent } from './flat-bench/flat-bench.component';
 import { FacilitiesComponent } from './about/facilities/facilities.component';
 import { BBQComponent } from './about/BBQ/BBQ.component';
 import { MapComponent } from './about/map/map.component';
 import { PlayComponent } from './play/play.component';
 import { ValleyComponent } from './play/valley/valley.component';
+import { WalkComponent } from './play/walk/walk.component';
+import { MountainClimbingComponent } from './play/mountain-climbing/mountain-climbing.component';
+import { HistoricSiteComponent } from './play/historic-site/historic-site.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,9 @@ import { ValleyComponent } from './play/valley/valley.component';
     MapComponent,
     PlayComponent,
     ValleyComponent,
+    WalkComponent,
+    MountainClimbingComponent,
+    HistoricSiteComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,9 +78,10 @@ import { ValleyComponent } from './play/valley/valley.component';
     CdkAccordionModule,
     BrowserAnimationsModule,
     MatStepperModule,
+    HttpClientModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [GoogleSheetService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
