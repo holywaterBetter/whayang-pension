@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'valley',
   templateUrl: './valley.component.html',
-  styleUrls: ['./valley.component.scss', '../../app.component.scss'],
+  styleUrls: ['../play.component.scss', '../../app.component.scss'],
 })
 export class ValleyComponent {
   currentIndex: number = 0;
